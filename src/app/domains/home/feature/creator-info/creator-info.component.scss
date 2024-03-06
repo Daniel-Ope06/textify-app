@@ -1,0 +1,65 @@
+$large-width: 1024px;
+$small-width: 480px;
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
+    background-color: #000000;
+
+    width: calc(45vw - 4rem);
+
+    @media (max-width: $large-width) {
+        width: calc(100vw - 4rem);
+        border-radius: 0.75rem;
+    }
+}
+
+.app-name {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: medium;
+    font-family: "Space Grotesk", sans-serif;
+
+    @media (max-width: $small-width) {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+.creator-info {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.creator-name {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: medium;
+    font-family: "Inter", sans-serif;
+
+    @media (max-width: $small-width) {
+        font-size: 0.875rem;
+        font-weight: normal;
+    }
+}
+
+.icon-link {
+    height: 2.5rem;
+    text-decoration: none;
+
+    img {
+        height: 100%;
+        object-fit: contain;
+    }
+
+    @media (max-width: $small-width) {
+        height: 2rem;
+    }
+}

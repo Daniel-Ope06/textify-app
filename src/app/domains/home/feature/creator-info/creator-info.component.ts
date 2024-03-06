@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-creator-info',
+  selector: 'creator-info',
   standalone: true,
   imports: [],
   templateUrl: './creator-info.component.html',
