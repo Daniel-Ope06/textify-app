@@ -1,0 +1,103 @@
+$extra-large-width: 1200px;
+$large-width: 1024px;
+$small-width: 480px;
+
+.banner {
+    padding: 6rem 8rem;
+    padding-bottom: 4rem;
+    width: calc(100vw - 16rem);
+    background-color: #111111;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: $extra-large-width) {
+        padding: 6rem;
+        padding-bottom: 4rem;
+        width: calc(100vw - 12rem);
+    }
+
+    @media (max-width: $large-width) {
+        grid-template-columns: 100%;
+        padding: 4rem;
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+        width: calc(100vw - 8rem);
+    }
+
+    @media (max-width: $small-width) {
+        padding: 2rem;
+        padding-top: 4rem;
+        width: calc(100vw - 4rem);
+    }
+}
+
+.purple-rectangle {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    aspect-ratio: 1.15/1;
+    border-radius: 2.5rem;
+    background: linear-gradient(to bottom, #EBD5FE, #B584DF);
+}
+
+.purple-rectangle .lady-img {
+    height: calc(100% + 4rem);
+    object-fit: contain;
+
+    position: absolute;
+    bottom: 0;
+    left: -15%;
+}
+
+.text-column {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 4rem;
+
+    @media (max-width: $extra-large-width) {
+        padding: 2rem;
+    }
+
+    @media (max-width: $large-width) {
+        gap: 1rem;
+        padding: 0;
+        padding-top: 2rem;
+    }
+}
+
+.text-column h1 {
+    margin: 0;
+    color: #FFFFFF;
+    text-wrap: balance;
+    font-size: 2.5rem;
+    font-weight: medium;
+    font-family: "Space Grotesk", sans-serif;
+
+    @media (max-width: $large-width) {
+        text-align: center;
+    }
+
+    @media (max-width: $small-width) {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+.text-column p {
+    margin: 0;
+    color: #D5D5D5;
+    font-size: 1.25rem;
+    font-weight: normal;
+    font-family: "Inter", sans-serif;
+
+    @media (max-width: $large-width) {
+        text-align: center;
+    }
+
+    @media (max-width: $small-width) {
+        font-size: 0.875rem;
+    }
+}
