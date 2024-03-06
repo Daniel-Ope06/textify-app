@@ -1,9 +1,97 @@
+$large-width: 1024px;
+$small-width: 480px;
+
 .page {
     width: 100%;
     padding: 2rem 0;
+    overflow: hidden;
     background-color: #202124;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.introduction {
+    position: relative;
+
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 4rem;
+    width: calc(70vw - 4rem);
+
+    @media (max-width: $large-width) {
+        gap: 1rem;
+        margin-top: 2rem;
+        width: calc(100vw - 4rem);
+    }
+}
+
+.introduction h1 {
+    margin: 0;
+    color: #FFFFFF;
+    text-align: center;
+    text-wrap: balance;
+    font-size: 2.5rem;
+    font-weight: medium;
+    font-family: "Space Grotesk", sans-serif;
+
+    @media (max-width: $small-width) {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+.introduction h1 span {
+    position: relative;
+    margin-left: 0.5rem;
+
+    img {
+        height: calc(100% + 2rem);
+        width: calc(100% + 2rem);
+        object-fit: fill;
+
+        position: absolute;
+        top: -1rem;
+        left: -0.75rem;
+    }
+
+    @media (max-width: $small-width) {
+        img {
+            height: calc(100% + 1rem);
+            width: calc(100% + 1rem);
+            top: -0.5rem;
+            left: -0.5rem;
+        }
+    }
+}
+
+.introduction p {
+    margin: 0;
+    color: #D5D5D5;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: normal;
+    font-family: "Inter", sans-serif;
+
+    @media (max-width: $small-width) {
+        font-size: 0.875rem;
+    }
+}
+
+.introduction .blue-circle {
+    height: 10rem;
+    object-fit: contain;
+
+    position: absolute;
+    right: calc(-15vw - 6.5rem);
+    top: -1rem;
+
+    @media (max-width: $small-width) {
+        height: 5rem;
+        right: -4rem;
+    }
 }
