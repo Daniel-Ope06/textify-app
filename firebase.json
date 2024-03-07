@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "textify-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -116,6 +116,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "textify-app:build:production",
+              "serveTarget": "textify-app:serve:production"
+            },
+            "development": {
+              "buildTarget": "textify-app:build:development",
+              "serveTarget": "textify-app:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

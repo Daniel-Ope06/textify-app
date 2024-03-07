@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "textify-art": {
+      "hosting": {
+        "textify-app": [
+          "textify-art"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "textify-art"
+  }
+}
