@@ -1,1 +1,19 @@
-<p>faq works!</p>
+<div class="container">
+    <h1 class="title">FAQs</h1>
+    <div class="faq-list">
+        @if (faqs) {
+            @for (faq of faqs; track faq; let i = $index) {
+                <div class="faq-item" [class.open]="faq['isOpen']">
+                    <h2>{{ faq['question'] }}</h2>
+                    <p>{{ faq['answer'] }}</p>
+                    <button (click)="toggleFaq(i)">
+                        <img [class.open]="faq['isOpen']" src="../../../../../assets/icons/addition.png"/>
+                        <img src="../../../../../assets/icons/subtraction.png"/>
+                    </button>
+                </div>
+            }
+        } @else {
+            <loading-spinner/>
+        }
+    </div>
+</div>
