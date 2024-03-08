@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { WordArtService } from '../../../shared/service/word-art/word-art.service';
 
 @Component({
   selector: 'textify-output',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './textify-output.component.scss'
 })
 export class TextifyOutputComponent {
-
+  @Input({required: true}) wordArt: string = '';
 }
