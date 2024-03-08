@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="title">FAQs</h1>
     <div class="faq-list">
-        @if (faqs) {
+        @if (faqs.length > 0) {
             @for (faq of faqs; track faq; let i = $index) {
                 <div class="faq-item" [class.open]="faq['isOpen']">
                     <h2>{{ faq['question'] }}</h2>

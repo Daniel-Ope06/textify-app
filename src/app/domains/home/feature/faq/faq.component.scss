@@ -48,6 +48,10 @@ $small-width: 480px;
     border-bottom: 1px solid #676464;
     transition: height 0.3s ease-in-out;
 
+    &:last-child {
+        border-bottom: none;
+    }
+
     &.open {
         height: 8rem;
     }
