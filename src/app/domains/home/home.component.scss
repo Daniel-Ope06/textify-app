@@ -25,7 +25,6 @@ $small-width: 480px;
 
     @media (max-width: $large-width) {
         gap: 1rem;
-        margin-top: 2rem;
         width: calc(100vw - 4rem);
     }
 }
