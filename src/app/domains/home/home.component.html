@@ -7,9 +7,9 @@
         <img class="blue-circle" src="../../../assets/vector-art/circle-blue.png"/>
     </div>
 
-    <textify-input/>
+    <textify-input (createArtEvent)="receiveArt($event)"/>
 
-    <textify-output/>
+    <textify-output [wordArt]="wordArt"/>
 
     <how-it-works/>
 

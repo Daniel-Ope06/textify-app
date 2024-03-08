@@ -14,6 +14,12 @@ import { TextifyOutputComponent } from './feature/textify-output/textify-output.
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  wordArt: string = '';
+
+  receiveArt(art: string) {
+    this.wordArt = art;
+  }
+
   scrollToTop() {
     window.scrollTo({
       top: 0,
