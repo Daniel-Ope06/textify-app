@@ -1,1 +1,20 @@
-<p>textify-input works!</p>
+<form class="container" (submit)="onSubmit()">
+    <div class="text-input">
+        <label for="text">Text</label>
+        <input id="text" type="text" name="text" [placeholder]="placeholder.text" [(ngModel)]="input.text" autocomplete="off" required/>
+        <p>{{ input.text.length }}/50</p>
+    </div>
+
+    <div class="text-input">
+        <label for="symbol">Symbol</label>
+        <input id="symbol" type="text" name="symbol" [placeholder]="placeholder.symbol" [(ngModel)]="input.symbol" autocomplete="off" maxlength="4" required/>
+        <p>{{ input.symbol.length }}/4</p>
+    </div>
+
+    <button class="submit-btn" type="submit">
+        <img src="../../../../../assets/icons/wand.png"/>
+        <span>Convert</span>
+    </button>
+
+    <img class="cross-img" src="../../../../../assets/vector-art/cross.png"/>
+</form>

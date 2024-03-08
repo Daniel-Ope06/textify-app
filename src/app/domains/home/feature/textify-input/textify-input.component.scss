@@ -1,0 +1,130 @@
+$large-width: 1024px;
+$small-width: 480px;
+
+.container {
+    position: relative;
+    width: calc(100vw - 8rem);
+
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 1fr 0.3fr 0.2fr;
+
+    @media (max-width: $large-width) {
+        row-gap: 1rem;
+        grid-template-columns: 100%;
+        width: calc(100vw - 4rem);
+    }
+
+    @media (max-width: $small-width) {
+        width: calc(100vw - 2rem);
+    }
+}
+
+.text-input {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.text-input label {
+    margin: 0;
+    color: #D5D5D5;
+    font-size: 1.25rem;
+    font-weight: medium;
+    font-family: "Inter", sans-serif;
+
+    @media (max-width: $small-width) {
+        font-size: 1rem;
+    }
+}
+
+.text-input p {
+    margin: 0;
+    color: #D5D5D5;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: medium;
+    font-family: "Inter", sans-serif;
+
+    @media (max-width: $small-width) {
+        font-size: 0.875rem;
+    }
+}
+
+.text-input input {
+    padding: 1rem 0.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #595959;
+    background-color: #0D0D0D;
+
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: "Space Mono", monospace;
+
+    ::placeholder {
+        color: #D5D5D5;
+        opacity: 0.7;
+    }
+}
+
+.submit-btn {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    height: fit-content;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(to bottom, #D87BF9 0%, #A08CE1 100%);
+
+    cursor: pointer;
+    margin-top: 2rem;
+
+    img {
+        height: 1.5rem;
+        object-fit: contain;
+    }
+
+    span {
+        margin: 0;
+        color: #0D0D0D;
+        font-size: 1.25rem;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+    }
+
+    &:hover {
+        background: linear-gradient(to bottom, #5837C2 0%, #9225B9 100%);
+    }
+
+    @media (max-width: $large-width) {
+        margin-top: 0;
+
+        span {
+            font-size: 1rem;
+        }
+
+        &:hover {
+            background: linear-gradient(to bottom, #D87BF9 0%, #A08CE1 100%);
+        }
+    }
+}
+
+.cross-img {
+    height: 12rem;
+    object-fit: contain;
+
+    position: absolute;
+    top: -2rem;
+    left: -4rem;
+
+    @media (max-width: $small-width) {
+        height: 8rem;
+        top: 0;
+        left: -2rem;
+    }
+}
