@@ -44,7 +44,9 @@ $small-width: 480px;
 
 .purple-rectangle .lady-img {
     height: calc(100% + 4rem);
-    object-fit: contain;
+    width: 115%;
+    object-fit: cover;
+    object-position: left bottom;
 
     position: absolute;
     bottom: 0;
@@ -63,6 +65,7 @@ $small-width: 480px;
 
     @media (max-width: $large-width) {
         gap: 1rem;
+        align-items: center;
         padding: 0;
         padding-top: 2rem;
     }
@@ -99,5 +102,11 @@ $small-width: 480px;
 
     @media (max-width: $small-width) {
         font-size: 0.875rem;
+    }
+}
+
+.text-column call-to-action {
+    @media (max-width: $large-width) {
+        margin-top: 1rem;
     }
 }
