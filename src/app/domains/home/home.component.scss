@@ -9,6 +9,7 @@ $small-width: 480px;
     background-color: #202124;
 
     display: flex;
+    gap: 4rem;
     flex-direction: column;
     align-items: center;
 }
@@ -20,8 +21,6 @@ $small-width: 480px;
     gap: 2rem;
     align-items: center;
     flex-direction: column;
-
-    margin-top: 4rem;
     width: calc(70vw - 4rem);
 
     @media (max-width: $large-width) {
@@ -95,18 +94,6 @@ $small-width: 480px;
         height: 5rem;
         right: -4rem;
     }
-}
-
-.page how-it-works {
-    margin-top: 4rem;
-}
-
-.page promo-banner {
-    margin-top: 4rem;
-}
-
-.page faq {
-    margin-top: 4rem;
 }
 
 .page footer {
