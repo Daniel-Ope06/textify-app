@@ -81,7 +81,14 @@ $small-width: 480px;
     height: 20rem;
     margin: 0;
 
+    white-space: pre;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: normal;
+    font-family: "Space Mono", monospace;
+
     @media (max-width: $small-width) {
+        font-size: 0.5rem;
         height: 15rem;
     }
 }
