@@ -12,5 +12,10 @@ import { PromoBannerComponent } from './feature/promo-banner/promo-banner.compon
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }
