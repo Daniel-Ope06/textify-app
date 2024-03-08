@@ -3,11 +3,12 @@ import { CreatorInfoComponent } from './feature/creator-info/creator-info.compon
 import { FaqComponent } from './feature/faq/faq.component';
 import { HowItWorksComponent } from './feature/how-it-works/how-it-works.component';
 import { PromoBannerComponent } from './feature/promo-banner/promo-banner.component';
+import { TextifyInputComponent } from './feature/textify-input/textify-input.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CreatorInfoComponent, FaqComponent, HowItWorksComponent, PromoBannerComponent],
+  imports: [CreatorInfoComponent, FaqComponent, HowItWorksComponent, PromoBannerComponent, TextifyInputComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
