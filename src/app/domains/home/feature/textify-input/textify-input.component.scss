@@ -89,6 +89,10 @@ $small-width: 480px;
         color: #D5D5D5;
         opacity: 0.7;
     }
+
+    &#text {
+        text-transform: uppercase;
+    }
 }
 
 .submit-btn {
