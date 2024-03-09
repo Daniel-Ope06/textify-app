@@ -1,14 +1,17 @@
 <form class="container" (submit)="onSubmit()">
     <div class="text-input">
         <label for="text">Text</label>
-        <input id="text" type="text" name="text" [placeholder]="placeholder.text" [(ngModel)]="input.text" autocomplete="off" required/>
-        <p>{{ input.text.length }}/50</p>
+        <input id="text" type="text" name="text" [placeholder]="placeholder.text" [(ngModel)]="input.text" (input)="validateInput($event)" autocomplete="off" required/>
+        <p class="count">{{ input.text.length }}/50</p>
+        @if (invalidChar.length > 0){
+            <p class="error-msg">Oops! That character isn't ready for its debut yet.</p>
+        }
     </div>
 
     <div class="text-input">
         <label for="symbol">Symbol</label>
         <input id="symbol" type="text" name="symbol" [placeholder]="placeholder.symbol" [(ngModel)]="input.symbol" autocomplete="off" maxlength="4" required/>
-        <p>{{ input.symbol.length }}/4</p>
+        <p class="count">{{ input.symbol.length }}/4</p>
     </div>
 
     <button class="submit-btn" type="submit">

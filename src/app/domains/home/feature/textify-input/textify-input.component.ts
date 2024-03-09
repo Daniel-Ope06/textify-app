@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WordArtService } from '../../../shared/service/word-art/word-art.service';
 
@@ -9,15 +9,42 @@ import { WordArtService } from '../../../shared/service/word-art/word-art.servic
   templateUrl: './textify-input.component.html',
   styleUrl: './textify-input.component.scss'
 })
-export class TextifyInputComponent {
+export class TextifyInputComponent implements OnInit {
   @Output() createArtEvent = new EventEmitter<string>();
   artService: WordArtService = inject(WordArtService);
 
   input: { text: string, symbol: string } = { text: '', symbol: '' };
-  placeholder: { text: string, symbol: string } = { text: 'Textify', symbol: '*::*' };
+  placeholder: { text: string, symbol: string } = { text: 'A', symbol: '*::*' };
+  invalidChar: string = '';
+  previousValidText: string = '';
+
+  ngOnInit(): void {
+    let wordArt: string = this.artService.convertToWordArt(this.placeholder.text, this.placeholder.symbol);
+    this.createArtEvent.emit(wordArt);
+  }
 
   onSubmit() {
     let wordArt: string = this.artService.convertToWordArt(this.input.text, this.input.symbol);
     this.createArtEvent.emit(wordArt);
+  }
+
+  validateInput(event: any) {
+    let inputChar: string = event.data; // most recent character entered
+
+    if (inputChar && !this.isCharacterValid(inputChar)) {
+      event.target.value = this.previousValidText;
+      this.input.text = this.previousValidText;
+      this.invalidChar = inputChar;
+    } else {
+      this.invalidChar = '';
+      this.previousValidText = this.input.text;
+    }
+  }
+
+  isCharacterValid(char: string): boolean {
+    if (this.artService.characterSet.includes(char.toUpperCase())) {
+      return true;
+    }
+    return false;
   }
 }
