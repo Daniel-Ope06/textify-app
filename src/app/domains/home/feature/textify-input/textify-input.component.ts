@@ -24,7 +24,23 @@ export class TextifyInputComponent implements OnInit {
   }
 
   onSubmit() {
-    let wordArt: string = this.artService.convertToWordArt(this.input.text, this.input.symbol);
+    let text: string = '';
+    let symbol: string = '';
+    let wordArt: string = '';
+
+    if (this.input.text.length === 0) {
+      text = this.placeholder.text;
+    } else {
+      text = this.input.text;
+    }
+
+    if (this.input.symbol.length === 0) {
+      symbol = this.placeholder.symbol;
+    } else {
+      symbol = this.input.symbol;
+    }
+
+    wordArt = this.artService.convertToWordArt(text, symbol);
     this.createArtEvent.emit(wordArt);
   }
 
