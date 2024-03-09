@@ -5,18 +5,20 @@
             <span>Copy</span>
         </button>
 
-        <button>
+        <!-- <button>
             <img src="../../../../../assets/icons/share.png"/>
             <span>Share</span>
-        </button>
+        </button> -->
 
-        <button>
+        <!-- <button>
             <img src="../../../../../assets/icons/download.png"/>
             <span>Download</span>
-        </button>
+        </button> -->
     </div>
 
     <p class="output-row" [style.fontSize]="fontSize">{{ wordArt }}</p>
+
+    <p class="copy-msg" [class.show]="showCopyMessage">Copied to clipboard!</p>
 
     <img class="spotted-circle" src="../../../../../assets/vector-art/circle-spotted.png"/>
 </div>

@@ -13,6 +13,7 @@ export class TextifyOutputComponent implements OnChanges {
   fontSizeValue: number = 30; // measured in px
   fontSize: string = `${this.fontSizeValue}px`;
   screenWidth: number = window.innerWidth; // measured in px
+  showCopyMessage: boolean = false;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['wordArt'] || changes['screenWidth']) {
@@ -51,5 +52,10 @@ export class TextifyOutputComponent implements OnChanges {
 
   copyToClipboard() {
     navigator.clipboard.writeText(this.wordArt);
+    // show copy message for 5 seconds
+    this.showCopyMessage = true;
+    setTimeout(() =>{
+      this.showCopyMessage = false;
+    }, 5000);
   }
 }

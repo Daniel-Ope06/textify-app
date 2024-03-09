@@ -28,11 +28,11 @@ $small-width: 480px;
     align-items: center;
     justify-content: flex-end;
 
-    @media (max-width: $large-width) {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(3, 1fr);
-    }
+    // @media (max-width: $large-width) {
+    //     display: grid;
+    //     gap: 1rem;
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
 }
 
 .button-row button {
@@ -92,6 +92,31 @@ $small-width: 480px;
 
     @media (max-width: $large-width) {
         height: 10rem;
+    }
+}
+
+.copy-msg {
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+
+    margin: 0;
+    color: transparent;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: medium;
+    font-family: "Inter", sans-serif;
+
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.show {
+        opacity: 1;
+    }
+
+    @media (max-width: $small-width) {
+        top: -1.5rem;
+        font-size: 0.875rem;
     }
 }
 
