@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // Alphabets
-import { A } from './characters/alphabet/english/a.alphabet';
+import { A } from './alphabet/a.alphabet';
 
 @Injectable({
   providedIn: 'root'
