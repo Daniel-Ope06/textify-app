@@ -48,4 +48,8 @@ export class TextifyOutputComponent implements OnChanges {
 
     this.fontSize = `${this.fontSizeValue}px`;
   }
+
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.wordArt);
+  }
 }
