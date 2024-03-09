@@ -3,9 +3,7 @@
         <label for="text">Text</label>
         <input id="text" type="text" name="text" [placeholder]="placeholder.text" [(ngModel)]="input.text" (input)="validateInput($event)" autocomplete="off" maxlength="15" required/>
         <p class="count">{{ input.text.length }}/15</p>
-        @if (invalidChar.length > 0){
-            <p class="error-msg">Oops! That character isn't ready for its debut yet.</p>
-        }
+        <p class="error-msg" [class.show]="(invalidChar.length > 0)">Oops! That character isn't ready for its debut yet.</p>
     </div>
 
     <div class="text-input">

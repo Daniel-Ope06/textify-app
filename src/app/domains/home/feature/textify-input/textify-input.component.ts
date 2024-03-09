@@ -51,6 +51,10 @@ export class TextifyInputComponent implements OnInit {
       event.target.value = this.previousValidText;
       this.input.text = this.previousValidText;
       this.invalidChar = inputChar;
+      // show error message for 5 seconds
+      setTimeout(() =>{
+        this.invalidChar = '';
+      }, 5000);
     } else {
       this.invalidChar = '';
       this.previousValidText = this.input.text;
