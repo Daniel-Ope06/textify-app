@@ -29,7 +29,9 @@ $small-width: 480px;
     justify-content: flex-end;
 
     @media (max-width: $large-width) {
-        justify-content: space-between;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -77,19 +79,19 @@ $small-width: 480px;
 }
 
 .output-row {
-    // border: 2px solid blue;
     height: 20rem;
     margin: 0;
 
+    display: grid;
+    place-items: center;
+
     white-space: pre;
     color: #FFFFFF;
-    font-size: 0.875rem;
     font-weight: normal;
     font-family: "Space Mono", monospace;
 
-    @media (max-width: $small-width) {
-        font-size: 0.5rem;
-        height: 15rem;
+    @media (max-width: $large-width) {
+        height: 10rem;
     }
 }
 
@@ -99,10 +101,11 @@ $small-width: 480px;
 
     position: absolute;
     left: -3.5rem;
-    top: 70%;
+    top: calc(50% - 3.5rem);
 
     @media (max-width: $small-width) {
         height: 5rem;
         left: -2.5rem;
+        top: calc(50% - 2.5rem);
     }
 }
