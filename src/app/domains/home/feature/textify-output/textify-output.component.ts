@@ -1,4 +1,5 @@
-import { Component, HostListener, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'textify-output',
@@ -10,10 +11,13 @@ import { Component, HostListener, Input, OnChanges, SimpleChanges } from '@angul
 export class TextifyOutputComponent implements OnChanges {
   @Input({required: true}) wordArt: string = '';
 
-  fontSizeValue: number = 30; // measured in px
+  @ViewChild('art') art!: ElementRef<HTMLParagraphElement>;
+
+  fontSizeValue: number = 14; // measured in px
   fontSize: string = `${this.fontSizeValue}px`;
   screenWidth: number = window.innerWidth; // measured in px
   showCopyMessage: boolean = false;
+  showDownloadMessage: boolean = false;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['wordArt'] || changes['screenWidth']) {
@@ -29,22 +33,23 @@ export class TextifyOutputComponent implements OnChanges {
 
   setFontSize() {
     let charCountPerLine: number = this.wordArt.indexOf('\n') - 4;
+    let padding: number = 0;
 
-    if (this.screenWidth >= 1370) {
-      if (charCountPerLine <= 140) { this.fontSizeValue = 14; }
-      else if (charCountPerLine <= 236) { this.fontSizeValue = 8; }
-      else { this.fontSizeValue = 4; }
+    // set padding based on screen width (referenced from the css file)
+    if (this.screenWidth > 1024) {
+      padding = 160;
+    } else if (this.screenWidth > 480) {
+      padding = 96;
+    } else {
+      padding = 64;
     }
-    else if (this.screenWidth >= 1024) {
-      if (charCountPerLine <= 92) { this.fontSizeValue = 14; }
-      else if (charCountPerLine <= 172) { this.fontSizeValue = 8; }
-      else { this.fontSizeValue = 6; }
-    }
-    else if (this.screenWidth >= 390) {
-      if (charCountPerLine <= 60) { this.fontSizeValue = 8; }
-      else if (charCountPerLine <= 120) { this.fontSizeValue = 4; }
-      else if (charCountPerLine <= 156) { this.fontSizeValue = 3; }
-      else { this.fontSizeValue = 2; }
+
+    this.fontSizeValue = 14; // max font-size
+
+    while ((charCountPerLine * this.fontSizeValue) > (this.screenWidth - padding)) {
+      if ((this.screenWidth > 780) && (this.fontSizeValue < 5)) { break; } // min font-size is 4px at above 780px screen width
+      else { if (this.fontSizeValue < 3) { break; } } // min font-size is 2px at below 780px screen width
+      this.fontSizeValue -= 1;
     }
 
     this.fontSize = `${this.fontSizeValue}px`;
@@ -53,9 +58,30 @@ export class TextifyOutputComponent implements OnChanges {
   copyToClipboard() {
     navigator.clipboard.writeText(this.wordArt);
     // show copy message for 5 seconds
+    this.showDownloadMessage = false;
     this.showCopyMessage = true;
     setTimeout(() =>{
       this.showCopyMessage = false;
+    }, 5000);
+  }
+
+  downloadArt() {
+    const elementToDownload = this.art.nativeElement;
+
+    html2canvas(elementToDownload)
+      .then(canvas => {
+        const imageData = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = imageData;
+        link.download = 'textify-art.png';
+        link.click();
+      });
+
+    // show download message for 5 seconds
+    this.showCopyMessage = false;
+    this.showDownloadMessage = true;
+    setTimeout(() =>{
+      this.showDownloadMessage = false;
     }, 5000);
   }
 }

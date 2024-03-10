@@ -5,20 +5,21 @@
             <span>Copy</span>
         </button>
 
-        <!-- <button>
-            <img src="../../../../../assets/icons/share.png"/>
-            <span>Share</span>
-        </button> -->
-
-        <!-- <button>
+        <button (click)="downloadArt()">
             <img src="../../../../../assets/icons/download.png"/>
             <span>Download</span>
-        </button> -->
+        </button>
     </div>
 
-    <p class="output-row" [style.fontSize]="fontSize">{{ wordArt }}</p>
+    <div class="output-row">
+        <p [style.fontSize]="fontSize">{{ wordArt }}</p>
+        <!-- for download -->
+        <p #art id="art">{{ wordArt }}</p>
+    </div>
 
-    <p class="copy-msg" [class.show]="showCopyMessage">Copied to clipboard!</p>
+    <p class="notification-msg" [class.show]="showCopyMessage">Copied to clipboard!</p>
+
+    <p class="notification-msg" [class.show]="showDownloadMessage">Downloading!</p>
 
     <img class="spotted-circle" src="../../../../../assets/vector-art/circle-spotted.png"/>
 </div>
