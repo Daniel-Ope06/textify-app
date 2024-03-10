@@ -13,7 +13,8 @@ $small-width: 480px;
     font-weight: medium;
     font-family: "Space Grotesk", sans-serif;
 
-    background: linear-gradient(180deg, #9B59B6, #FF5E99);
+    // background: linear-gradient(180deg, #9B59B6, #FF5E99);
+    background-image: linear-gradient(to right, #A07BFF 0%, #FF57E9 51%, #A07BFF 100%);
     -webkit-background-clip: text;
     background-clip: text;
 
@@ -24,7 +25,7 @@ $small-width: 480px;
 
 .flex-col .bottom {
     margin: 0;
-    color: #FF5E99;
+    color: #FF57E9;
     font-size: 1.25rem;
     font-weight: lighter;
     font-family: "Inter", sans-serif;
