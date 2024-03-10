@@ -5,7 +5,7 @@ import { A } from './alphabet/a.alphabet'; import { B } from './alphabet/b.alpha
 import { C } from './alphabet/c.alphabet'; import { D } from './alphabet/d.alphabet';
 import { E } from './alphabet/e.alphabet'; import { F } from './alphabet/f.alphabet';
 import { G } from './alphabet/g.alphabet'; import { H } from './alphabet/h.alphabet';
-import { I } from './alphabet/i.alphabet';
+import { I } from './alphabet/i.alphabet'; import { J } from './alphabet/j.alphabet';
 
 import { M } from './alphabet/m.alphabet';
 
@@ -38,7 +38,7 @@ export class WordArtService {
           case "C": line += C.getLine(lineNumber, symbol); break; case "D": line += D.getLine(lineNumber, symbol); break;
           case "E": line += E.getLine(lineNumber, symbol); break; case "F": line += F.getLine(lineNumber, symbol); break;
           case "G": line += G.getLine(lineNumber, symbol); break; case "H": line += H.getLine(lineNumber, symbol); break;
-          case "I": line += I.getLine(lineNumber, symbol); break;
+          case "I": line += I.getLine(lineNumber, symbol); break; case "J": line += J.getLine(lineNumber, symbol); break;
 
 
           case "M": line += M.getLine(lineNumber, symbol); break;
