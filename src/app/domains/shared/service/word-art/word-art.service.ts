@@ -16,8 +16,11 @@ import { W } from './alphabet/w.alphabet'; import { X } from './alphabet/x.alpha
 import { Y } from './alphabet/y.alphabet'; import { Z } from './alphabet/z.alphabet';
 
 // Numbers
-import { Zero } from './number/0.number'; import { One } from './number/1.number';
-import { Two } from './number/2.number'; import { Three } from './number/3.number';
+import { Zero } from './number/0.number';
+import { One } from './number/1.number';
+import { Two } from './number/2.number';
+import { Three } from './number/3.number';
+import { Four } from './number/4.number';
 
 @Injectable({
   providedIn: 'root'
@@ -63,8 +66,11 @@ export class WordArtService {
           case "Y": line += Y.getLine(lineNumber, symbol); break; case "Z": line += Z.getLine(lineNumber, symbol); break;
 
           // Numbers
-          case "0": line += Zero.getLine(lineNumber, symbol); break; case "1": line += One.getLine(lineNumber, symbol); break;
-          case "2": line += Two.getLine(lineNumber, symbol); break; case "3": line += Three.getLine(lineNumber, symbol); break;
+          case "0": line += Zero.getLine(lineNumber, symbol); break;
+          case "1": line += One.getLine(lineNumber, symbol); break;
+          case "2": line += Two.getLine(lineNumber, symbol); break;
+          case "3": line += Three.getLine(lineNumber, symbol); break;
+          case "4": line += Four.getLine(lineNumber, symbol); break;
         }
     }
 
