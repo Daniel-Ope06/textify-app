@@ -17,6 +17,7 @@ import { Y } from './alphabet/y.alphabet'; import { Z } from './alphabet/z.alpha
 
 // Numbers
 import { Zero } from './number/0.number'; import { One } from './number/1.number';
+import { Two } from './number/2.number';
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +64,7 @@ export class WordArtService {
 
           // Numbers
           case "0": line += Zero.getLine(lineNumber, symbol); break; case "1": line += One.getLine(lineNumber, symbol); break;
+          case "2": line += Two.getLine(lineNumber, symbol); break;
         }
     }
 
