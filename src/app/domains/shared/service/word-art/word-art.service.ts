@@ -8,6 +8,7 @@ import { G } from './alphabet/g.alphabet'; import { H } from './alphabet/h.alpha
 import { I } from './alphabet/i.alphabet'; import { J } from './alphabet/j.alphabet';
 import { K } from './alphabet/k.alphabet'; import { L } from './alphabet/l.alphabet';
 import { M } from './alphabet/m.alphabet'; import { N } from './alphabet/n.alphabet';
+import { O } from './alphabet/o.alphabet';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,7 @@ export class WordArtService {
           case "I": line += I.getLine(lineNumber, symbol); break; case "J": line += J.getLine(lineNumber, symbol); break;
           case "K": line += K.getLine(lineNumber, symbol); break; case "L": line += L.getLine(lineNumber, symbol); break;
           case "M": line += M.getLine(lineNumber, symbol); break; case "N": line += N.getLine(lineNumber, symbol); break;
+          case "O": line += O.getLine(lineNumber, symbol); break;
         }
     }
 
