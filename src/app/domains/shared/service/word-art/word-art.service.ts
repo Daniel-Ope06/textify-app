@@ -13,7 +13,7 @@ import { Q } from './alphabet/q.alphabet'; import { R } from './alphabet/r.alpha
 import { S } from './alphabet/s.alphabet'; import { T } from './alphabet/t.alphabet';
 import { U } from './alphabet/u.alphabet'; import { V } from './alphabet/v.alphabet';
 import { W } from './alphabet/w.alphabet'; import { X } from './alphabet/x.alphabet';
-import { Y } from './alphabet/y.alphabet';
+import { Y } from './alphabet/y.alphabet'; import { Z } from './alphabet/z.alphabet';
 
 @Injectable({
   providedIn: 'root'
@@ -50,9 +50,9 @@ export class WordArtService {
           case "O": line += O.getLine(lineNumber, symbol); break; case "P": line += P.getLine(lineNumber, symbol); break;
           case "Q": line += Q.getLine(lineNumber, symbol); break; case "R": line += R.getLine(lineNumber, symbol); break;
           case "S": line += S.getLine(lineNumber, symbol); break; case "T": line += T.getLine(lineNumber, symbol); break;
-          case "T": line += T.getLine(lineNumber, symbol); break; case "U": line += U.getLine(lineNumber, symbol); break;
-          case "V": line += V.getLine(lineNumber, symbol); break; case "W": line += W.getLine(lineNumber, symbol); break;
-          case "X": line += X.getLine(lineNumber, symbol); break; case "Y": line += Y.getLine(lineNumber, symbol); break;
+          case "U": line += U.getLine(lineNumber, symbol); break; case "V": line += V.getLine(lineNumber, symbol); break;
+          case "W": line += W.getLine(lineNumber, symbol); break; case "X": line += X.getLine(lineNumber, symbol); break;
+          case "Y": line += Y.getLine(lineNumber, symbol); break; case "Z": line += Z.getLine(lineNumber, symbol); break;
         }
     }
 
