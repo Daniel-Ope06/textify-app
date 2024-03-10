@@ -15,11 +15,18 @@ import { U } from './alphabet/u.alphabet'; import { V } from './alphabet/v.alpha
 import { W } from './alphabet/w.alphabet'; import { X } from './alphabet/x.alphabet';
 import { Y } from './alphabet/y.alphabet'; import { Z } from './alphabet/z.alphabet';
 
+// Numbers
+import { One } from './number/1.number';
+
 @Injectable({
   providedIn: 'root'
 })
 export class WordArtService {
-  characterSet: string[] = ["A", "B", "C", "D", "E",    "M"];
+  characterSet: string[] = [
+    // Alphabets
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+    // Numbers
+  ];
 
   convertToWordArt(text: string, symbol: string): string {
     let wordArt: string = "";
@@ -53,6 +60,9 @@ export class WordArtService {
           case "U": line += U.getLine(lineNumber, symbol); break; case "V": line += V.getLine(lineNumber, symbol); break;
           case "W": line += W.getLine(lineNumber, symbol); break; case "X": line += X.getLine(lineNumber, symbol); break;
           case "Y": line += Y.getLine(lineNumber, symbol); break; case "Z": line += Z.getLine(lineNumber, symbol); break;
+
+          // Numbers
+          case "1": line += One.getLine(lineNumber, symbol); break;
         }
     }
 
