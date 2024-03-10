@@ -27,6 +27,9 @@ import { Seven } from './number/7.number';
 import { Eight } from './number/8.number';
 import { Nine } from './number/9.number';
 
+// Special
+import { Addition } from './special/addition.special';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,6 +38,9 @@ export class WordArtService {
     // Alphabets
     "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
     // Numbers
+    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+    // Specials
+    "+",
   ];
 
   convertToWordArt(text: string, symbol: string): string {
@@ -81,6 +87,9 @@ export class WordArtService {
           case "7": line += Seven.getLine(lineNumber, symbol); break;
           case "8": line += Eight.getLine(lineNumber, symbol); break;
           case "9": line += Nine.getLine(lineNumber, symbol); break;
+
+          // Specials
+          case "+": line += Addition.getLine(lineNumber, symbol); break;
         }
     }
 
