@@ -14,7 +14,7 @@ export class TextifyInputComponent implements OnInit {
   artService: WordArtService = inject(WordArtService);
 
   input: { text: string, symbol: string } = { text: '', symbol: '' };
-  placeholder: { text: string, symbol: string } = { text: 'A', symbol: '*::*' };
+  placeholder: { text: string, symbol: string } = { text: '#1', symbol: ':*:' };
   invalidChar: string = '';
   previousValidText: string = '';
 
