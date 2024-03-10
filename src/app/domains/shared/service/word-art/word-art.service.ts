@@ -33,6 +33,7 @@ import { Colon } from './special/colon.special';
 import { Equality } from './special/equality.special';
 import { Exclamation } from './special/exclamation.special';
 import { Hashtag } from './special/hashtag.special';
+import { Question } from './special/question.special';
 import { Subtraction } from './special/subtraction.special';
 
 @Injectable({
@@ -45,7 +46,7 @@ export class WordArtService {
     // Numbers
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
     // Specials
-    "+", ":", "=", "!", "#", "-",
+    "+", ":", "=", "!", "#", "?", "-",
   ];
 
   convertToWordArt(text: string, symbol: string): string {
@@ -98,8 +99,9 @@ export class WordArtService {
           case ":": line += Colon.getLine(lineNumber, symbol); break;
           case "=": line += Equality.getLine(lineNumber, symbol); break;
           case "!": line += Exclamation.getLine(lineNumber, symbol); break;
-          case "-": line += Subtraction.getLine(lineNumber, symbol); break;
           case "#": line += Hashtag.getLine(lineNumber, symbol); break;
+          case "?": line += Question.getLine(lineNumber, symbol); break;
+          case "-": line += Subtraction.getLine(lineNumber, symbol); break;
         }
     }
 
