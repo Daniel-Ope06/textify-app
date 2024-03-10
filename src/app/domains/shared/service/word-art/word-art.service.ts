@@ -29,6 +29,7 @@ import { Nine } from './number/9.number';
 
 // Special
 import { Addition } from './special/addition.special';
+import { Colon } from './special/colon.special';
 import { Equality } from './special/equality.special';
 import { Exclamation } from './special/exclamation.special';
 
@@ -42,7 +43,7 @@ export class WordArtService {
     // Numbers
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
     // Specials
-    "+", "=", "!",
+    "+", ":", "=", "!",
   ];
 
   convertToWordArt(text: string, symbol: string): string {
@@ -92,6 +93,7 @@ export class WordArtService {
 
           // Specials
           case "+": line += Addition.getLine(lineNumber, symbol); break;
+          case ":": line += Colon.getLine(lineNumber, symbol); break;
           case "=": line += Equality.getLine(lineNumber, symbol); break;
           case "!": line += Exclamation.getLine(lineNumber, symbol); break;
         }
