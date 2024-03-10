@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 
 // Alphabets
-import { A } from './alphabet/a.alphabet';
+import { A } from './alphabet/a.alphabet'; import { B } from './alphabet/b.alphabet';
 import { M } from './alphabet/m.alphabet';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WordArtService {
-  characterSet: string[] = ["A", "M"];
+  characterSet: string[] = ["A", "B",    "M"];
 
   convertToWordArt(text: string, symbol: string): string {
     let wordArt: string = "";
@@ -29,6 +29,12 @@ export class WordArtService {
         let character = text.charAt(i);
         switch (character) {
             case "A": line += A.getLine(lineNumber, symbol); break;
+            case "B": line += B.getLine(lineNumber, symbol); break;
+
+
+
+
+
             case "M": line += M.getLine(lineNumber, symbol); break;
         }
     }
