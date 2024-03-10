@@ -27,12 +27,6 @@ $small-width: 480px;
     gap: 2rem;
     align-items: center;
     justify-content: flex-end;
-
-    // @media (max-width: $large-width) {
-    //     display: grid;
-    //     gap: 1rem;
-    //     grid-template-columns: repeat(3, 1fr);
-    // }
 }
 
 .button-row button {
@@ -79,23 +73,29 @@ $small-width: 480px;
 }
 
 .output-row {
-    height: 20rem;
-    margin: 0;
-
+    height: 17rem;
     display: grid;
     place-items: center;
+}
 
+.output-row p {
+    margin: 0;
     white-space: pre;
     color: #FFFFFF;
     font-weight: normal;
     font-family: "Space Mono", monospace;
 
-    @media (max-width: $large-width) {
-        height: 10rem;
+    padding: 2em 0 2em 2em; // 'em' to make it depend on font-size
+    background-color: #0D0D0D;
+
+    &#art {
+        position: absolute;
+        right: -67500rem;
+        font-size: 6.75rem; // large font-size to make downloaded image look good
     }
 }
 
-.copy-msg {
+.notification-msg {
     position: absolute;
     top: -2.5rem;
     right: 0;
