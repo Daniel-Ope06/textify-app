@@ -66,6 +66,13 @@ export class TextifyOutputComponent implements OnChanges {
   }
 
   downloadArt() {
+    // show download message for 5 seconds
+    this.showCopyMessage = false;
+    this.showDownloadMessage = true;
+    setTimeout(() =>{
+      this.showDownloadMessage = false;
+    }, 5000);
+
     const elementToDownload = this.art.nativeElement;
 
     html2canvas(elementToDownload)
@@ -76,12 +83,5 @@ export class TextifyOutputComponent implements OnChanges {
         link.download = 'textify-art.png';
         link.click();
       });
-
-    // show download message for 5 seconds
-    this.showCopyMessage = false;
-    this.showDownloadMessage = true;
-    setTimeout(() =>{
-      this.showDownloadMessage = false;
-    }, 5000);
   }
 }
