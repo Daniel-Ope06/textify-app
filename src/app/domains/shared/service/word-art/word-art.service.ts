@@ -23,6 +23,7 @@ import { Three } from './number/3.number';
 import { Four } from './number/4.number';
 import { Five } from './number/5.number';
 import { Six } from './number/6.number';
+import { Seven } from './number/7.number';
 
 @Injectable({
   providedIn: 'root'
@@ -75,6 +76,7 @@ export class WordArtService {
           case "4": line += Four.getLine(lineNumber, symbol); break;
           case "5": line += Five.getLine(lineNumber, symbol); break;
           case "6": line += Six.getLine(lineNumber, symbol); break;
+          case "7": line += Seven.getLine(lineNumber, symbol); break;
         }
     }
 
