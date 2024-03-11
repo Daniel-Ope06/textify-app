@@ -1,27 +1,16 @@
-# TextifyApp
+# Textify - Craft Messages That Speak in Symbols
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## Overview
+Textify is a platform that allows you to create artistic messages with your words.
 
-## Development server
+Website: https://textify-art.web.app/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Convert words to ASCII art
+- Convert shapes & emojis to ASCII art (coming soon)
 
-## Code scaffolding
+## Screen Recording
+![textify-joy](https://github.com/Daniel-Ope06/textify-app/assets/97707320/35ad156d-0256-4f27-a461-434a5bc579f1)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Samples
+![2](https://github.com/Daniel-Ope06/textify-app/assets/97707320/2d399506-9000-4893-8ba1-39e5cc2506ea)
