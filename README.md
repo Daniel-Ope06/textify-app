@@ -3,11 +3,13 @@
 ## Overview
 Textify is a platform that allows you to create artistic messages with your words.
 
-Website: https://textify-art.web.app/
-
 ## Features
 - Convert words to ASCII art
 - Convert shapes & emojis to ASCII art (coming soon)
+
+## Connect with Us
+- Website: https://textify-art.web.app
+- Email: opeoluwaoyedeji06@gmail.com
 
 ## Screen Recording
 ![textify-joy](https://github.com/Daniel-Ope06/textify-app/assets/97707320/35ad156d-0256-4f27-a461-434a5bc579f1)
