@@ -15,8 +15,7 @@ export class TextifyInputComponent implements OnInit {
 
   input: { text: string, symbol: string } = { text: '', symbol: '' };
   placeholder: { text: string, symbol: string } = { text: '#1', symbol: ':*:' };
-  invalidChar: string = '';
-  previousValidText: string = '';
+  isTextValid: boolean = true;
   previousValidSymbol: string = '';
 
   ngOnInit(): void {
@@ -47,26 +46,29 @@ export class TextifyInputComponent implements OnInit {
 
   validateInput(event: any) {
     // if backspace occurs do not validate
-    if (event.inputType === 'deleteContentBackward') {
-      this.previousValidText = this.input.text;
-      return;
+    if (event.inputType === 'deleteContentBackward') { return; }
+
+    // if length > 10, only take first 10 characters
+    if (event.target.value.length > 10) {
+      event.target.value = event.target.value.slice(0, 10);
+      this.input.text = event.target.value;
     }
 
-    // most recent character entered
-    let inputChar: string = event.target.value.slice(-1); 
-
-    if (!this.isCharacterValid(inputChar)) {
-      event.target.value = this.previousValidText;
-      this.input.text = this.previousValidText;
-      this.invalidChar = inputChar;
-      // show error message for 5 seconds
-      setTimeout(() =>{
-        this.invalidChar = '';
-      }, 5000);
-    } else {
-      this.invalidChar = '';
-      this.previousValidText = this.input.text;
+    // validate each character
+    let validText = '';
+    for (let char of event.target.value) {
+      if (this.isCharacterValid(char)) {
+        validText += char;
+      } else {
+        // show error message for 5 seconds
+        this.isTextValid = false;
+        setTimeout(() =>{
+          this.isTextValid = true;
+        }, 5000);
+      }
     }
+    event.target.value = validText;
+    this.input.text = validText;
   }
 
   isCharacterValid(char: string): boolean {
@@ -74,13 +76,9 @@ export class TextifyInputComponent implements OnInit {
   }
 
   validateSymbol(event: any) {
-    let symbol: string = event.target.value;
-
-    if (symbol.length > 4) {
-      event.target.value = this.previousValidSymbol;
-      this.input.symbol = this.previousValidSymbol;
-    } else {
-      this.previousValidSymbol = this.input.symbol;
+    if (event.target.value.length > 4) {
+      event.target.value = event.target.value.slice(0, 4);
+      this.input.symbol = event.target.value;
     }
   }
 }
