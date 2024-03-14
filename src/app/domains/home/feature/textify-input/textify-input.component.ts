@@ -17,6 +17,7 @@ export class TextifyInputComponent implements OnInit {
   placeholder: { text: string, symbol: string } = { text: '#1', symbol: ':*:' };
   invalidChar: string = '';
   previousValidText: string = '';
+  previousValidSymbol: string = '';
 
   ngOnInit(): void {
     let wordArt: string = this.artService.convertToWordArt(this.placeholder.text, this.placeholder.symbol);
@@ -45,7 +46,14 @@ export class TextifyInputComponent implements OnInit {
   }
 
   validateInput(event: any) {
-    let inputChar: string = event.target.value.slice(-1); // most recent character entered
+    // if backspace occurs do not validate
+    if (event.inputType === 'deleteContentBackward') {
+      this.previousValidText = this.input.text;
+      return;
+    }
+
+    // most recent character entered
+    let inputChar: string = event.target.value.slice(-1); 
 
     if (!this.isCharacterValid(inputChar)) {
       event.target.value = this.previousValidText;
@@ -63,5 +71,16 @@ export class TextifyInputComponent implements OnInit {
 
   isCharacterValid(char: string): boolean {
     return this.artService.characterSet.includes(char.toUpperCase())
+  }
+
+  validateSymbol(event: any) {
+    let symbol: string = event.target.value;
+
+    if (symbol.length > 4) {
+      event.target.value = this.previousValidSymbol;
+      this.input.symbol = this.previousValidSymbol;
+    } else {
+      this.previousValidSymbol = this.input.symbol;
+    }
   }
 }

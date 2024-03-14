@@ -8,7 +8,7 @@
 
     <div class="text-input">
         <label for="symbol">Symbol</label>
-        <input id="symbol" type="text" name="symbol" [placeholder]="placeholder.symbol" [(ngModel)]="input.symbol" autocomplete="off" maxlength="4" required/>
+        <input id="symbol" type="text" name="symbol" [placeholder]="placeholder.symbol" [(ngModel)]="input.symbol" (input)="validateSymbol($event)" autocomplete="off" maxlength="4" required/>
         <p class="count">{{ input.symbol.length }}/4</p>
     </div>
 
