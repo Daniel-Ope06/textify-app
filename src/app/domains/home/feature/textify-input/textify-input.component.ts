@@ -45,9 +45,9 @@ export class TextifyInputComponent implements OnInit {
   }
 
   validateInput(event: any) {
-    let inputChar: string = event.data; // most recent character entered
+    let inputChar: string = event.target.value.slice(-1); // most recent character entered
 
-    if (inputChar && !this.isCharacterValid(inputChar)) {
+    if (!this.isCharacterValid(inputChar)) {
       event.target.value = this.previousValidText;
       this.input.text = this.previousValidText;
       this.invalidChar = inputChar;
@@ -62,9 +62,6 @@ export class TextifyInputComponent implements OnInit {
   }
 
   isCharacterValid(char: string): boolean {
-    if (this.artService.characterSet.includes(char.toUpperCase())) {
-      return true;
-    }
-    return false;
+    return this.artService.characterSet.includes(char.toUpperCase())
   }
 }
