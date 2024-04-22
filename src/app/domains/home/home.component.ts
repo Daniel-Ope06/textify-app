@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CreatorInfoComponent } from './feature/creator-info/creator-info.component';
+import { CreatorInfoComponent } from './ui/creator-info/creator-info.component';
 import { FaqComponent } from './ui/faq/faq.component';
 import { HowItWorksComponent } from './ui/how-it-works/how-it-works.component';
 import { PromoBannerComponent } from './feature/promo-banner/promo-banner.component';
