@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CreatorInfoComponent } from './feature/creator-info/creator-info.component';
-import { FaqComponent } from './feature/faq/faq.component';
+import { FaqComponent } from './ui/faq/faq.component';
 import { HowItWorksComponent } from './feature/how-it-works/how-it-works.component';
 import { PromoBannerComponent } from './feature/promo-banner/promo-banner.component';
 import { TextifyInputComponent } from './feature/textify-input/textify-input.component';
@@ -9,9 +9,16 @@ import { TextifyOutputComponent } from './feature/textify-output/textify-output.
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CreatorInfoComponent, FaqComponent, HowItWorksComponent, PromoBannerComponent, TextifyInputComponent, TextifyOutputComponent],
+  imports: [
+    CreatorInfoComponent,
+    FaqComponent,
+    HowItWorksComponent,
+    PromoBannerComponent,
+    TextifyInputComponent,
+    TextifyOutputComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   wordArt: string = '';
@@ -23,7 +30,7 @@ export class HomeComponent {
   scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 }
