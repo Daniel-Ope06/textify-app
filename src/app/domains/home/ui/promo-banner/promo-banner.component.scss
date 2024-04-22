@@ -3,110 +3,106 @@ $large-width: 1024px;
 $small-width: 480px;
 
 .banner {
-    padding: 6rem 8rem;
+  padding: 6rem 8rem;
+  padding-bottom: 4rem;
+  width: calc(100vw - 16rem);
+  background-color: #111111;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+
+  @media (max-width: $extra-large-width) {
+    padding: 6rem;
     padding-bottom: 4rem;
-    width: calc(100vw - 16rem);
-    background-color: #111111;
+    width: calc(100vw - 12rem);
+  }
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  @media (max-width: $large-width) {
+    grid-template-columns: 100%;
+    row-gap: 2rem;
+    padding: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    width: calc(100vw - 8rem);
+  }
 
-    @media (max-width: $extra-large-width) {
-        padding: 6rem;
-        padding-bottom: 4rem;
-        width: calc(100vw - 12rem);
-    }
-
-    @media (max-width: $large-width) {
-        grid-template-columns: 100%;
-        padding: 4rem;
-        padding-top: 6rem;
-        padding-bottom: 2rem;
-        width: calc(100vw - 8rem);
-    }
-
-    @media (max-width: $small-width) {
-        padding: 2rem;
-        padding-top: 4rem;
-        width: calc(100vw - 4rem);
-    }
+  @media (max-width: $small-width) {
+    padding: 2rem;
+    padding-top: 4rem;
+    width: calc(100vw - 4rem);
+  }
 }
 
 .purple-rectangle {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 
-    width: 100%;
-    aspect-ratio: 1.15/1;
-    border-radius: 2.5rem;
-    background: linear-gradient(to bottom, #EBD5FE, #B584DF);
+  width: 100%;
+  aspect-ratio: 1.15/1;
+  border-radius: 2.5rem;
+  background: linear-gradient(to bottom, #ebd5fe, #b584df);
 }
 
 .purple-rectangle .lady-img {
-    height: calc(100% + 4rem);
-    width: 115%;
-    object-fit: cover;
-    object-position: left bottom;
+  height: calc(100% + 4rem);
+  width: 115%;
+  object-fit: cover;
+  object-position: left bottom;
 
-    position: absolute;
-    bottom: 0;
-    left: -15%;
+  position: absolute;
+  bottom: 0;
+  left: -15%;
 }
 
 .text-column {
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    padding: 4rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
 
-    @media (max-width: $extra-large-width) {
-        padding: 2rem;
-    }
-
-    @media (max-width: $large-width) {
-        gap: 1rem;
-        align-items: center;
-        padding: 0;
-        padding-top: 2rem;
-    }
+  @media (max-width: $large-width) {
+    gap: 1rem;
+    align-items: center;
+  }
 }
 
 .text-column h1 {
-    margin: 0;
-    color: #FFFFFF;
-    text-wrap: balance;
-    font-size: 2.5rem;
-    font-weight: medium;
-    font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+  color: #ffffff;
+  text-wrap: balance;
+  font-size: 2.5rem;
+  font-weight: medium;
+  font-family: "Space Grotesk", sans-serif;
 
-    @media (max-width: $large-width) {
-        text-align: center;
-    }
+  @media (max-width: $large-width) {
+    text-align: center;
+  }
 
-    @media (max-width: $small-width) {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
+  @media (max-width: $small-width) {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }
 
 .text-column p {
-    margin: 0;
-    color: #D5D5D5;
-    font-size: 1.25rem;
-    font-weight: normal;
-    font-family: "Inter", sans-serif;
+  margin: 0;
+  color: #d5d5d5;
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-family: "Inter", sans-serif;
 
-    @media (max-width: $large-width) {
-        text-align: center;
-    }
+  @media (max-width: $large-width) {
+    text-align: center;
+  }
 
-    @media (max-width: $small-width) {
-        font-size: 0.875rem;
-    }
+  @media (max-width: $small-width) {
+    font-size: 0.875rem;
+  }
 }
 
 .text-column call-to-action {
-    @media (max-width: $large-width) {
-        margin-top: 1rem;
-    }
+  @media (max-width: $large-width) {
+    margin-top: 1rem;
+  }
 }
